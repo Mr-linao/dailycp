@@ -14,7 +14,7 @@ from Crypto.Cipher import AES
 
 
 class DailyCP:
-    def __init__(self, schoolName="安徽理工大学"):
+    def __init__(self, schoolName="广西民族师范学院"):
         self.key = "b3L26XNL"  # dynamic when app update
         self.session = requests.session()
         self.host = ""
@@ -28,8 +28,8 @@ class DailyCP:
             # "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
             # "User-Agent": "okhttp/3.12.4"
         })
-        extension = {"deviceId": str(uuid.uuid4()), "systemName": "未来操作系统", "userId": "5201314",
-                     "appVersion": "8.1.13", "model": "红星一号量子计算机", "lon": 0.0, "systemVersion": "初号机", "lat": 0.0}
+        extension = {"deviceId": str(uuid.uuid4()), "systemName": "Android", "userId": "5201314",
+                     "appVersion": "8.1.13", "model": "Redmi K30 PRO", "lon": 0.0, "systemVersion": "12", "lat": 0.0}
         self.session.headers.update(
             {"Cpdaily-Extension": self.encrypt(json.dumps(extension))})
         self.setHostBySchoolName(schoolName)
